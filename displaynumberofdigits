@@ -1,0 +1,23 @@
+import java.util.*;
+    
+    public class Main{
+    
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n =sc.nextInt();
+      int s=n;
+      int d=0;
+      while( n!=0){
+          n=n/10;
+          d++;
+      }
+      int div=(int)Math.pow(10,d-1);
+      while(div!=0){
+          int r=s/div;
+          System.out.println(r);
+          s=s%div;
+          div=div/10;
+          }
+      
+     }
+    }
