@@ -1,0 +1,39 @@
+import java.util.*;
+   
+   public class Main{
+   
+   public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int k=sc.nextInt();
+    int r,nd=0;
+    int m =n;
+     while(m>0)
+    {
+        int rem=m%10;
+        m=m/10;
+        nd++;
+    }
+      k=k%nd;
+      if(k<0)
+      {
+       k=k+nd;   
+      }
+      int mul=1,div=1;
+    for(int i=1;i<=nd;i++)
+    {
+        if(i<=k)
+        {
+            div=div*10;
+        }
+        else{
+            mul=mul*10;
+        }
+    }
+         
+        r=n%div;
+        n=n/div;
+        int rn=r*mul+n;
+    System.out.println(rn);
+     }
+   }
