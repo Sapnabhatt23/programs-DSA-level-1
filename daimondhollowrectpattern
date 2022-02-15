@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n =scn.nextInt();
+        int st=n/2+1,sp=1;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<st;j++)
+            {
+                System.out.print("*\t");
+            }
+            for(int k=0;k<sp;k++)
+            {
+                System.out.print("\t");
+                
+            }
+            for(int l=0;l<st;l++)
+            {
+                System.out.print("*\t");
+            }
+         
+            System.out.print("\n");
+            
+             if(i<n/2)
+             {
+                 st--;
+                 sp=sp+2;
+             }else
+             {
+                 st++;
+                 sp=sp-2;
+             }
+            
+        }
+
+    }
+}
