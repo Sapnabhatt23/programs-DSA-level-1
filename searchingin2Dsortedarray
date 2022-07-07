@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int[][] arr=new int[n][n];
+       for(int i=0;i<n;i++)
+       {
+           for(int j=0;j<n;j++)
+           {
+               arr[i][j]=sc.nextInt();
+           }
+       }
+       int x=sc.nextInt();
+       // binary searching in a 2D array
+       
+       int r=0;
+       int c=n-1;
+       while(r<n && c>=0)
+       {
+           if(arr[r][c]==x)
+         {  System.out.println(r);
+           System.out.println(c);
+           return;
+         }
+         if(arr[r][c]>x)
+         {
+             c--;
+         }else{
+         r++;
+         }
+         }
+         System.out.println("Not Found");
+
+}
+}
