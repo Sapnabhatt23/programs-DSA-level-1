@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[][] arr=new int[n][n];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+           
+           //find min in a row
+           
+           int svj=0,min=0;
+           for(int i=0;i<n;i++)
+           {
+               svj=0;
+               min=arr[i][0];
+               for(int j=0;j<n;j++)
+               {
+                   if(min>arr[i][j])
+                   {
+                       min=arr[i][j];
+                       svj=j;
+                   }
+               }
+               
+               boolean ans=true;
+               for(int r=0;r<n;r++)
+               {
+                   if(min<arr[r][svj])
+                   {
+                       ans=false;
+                       break;
+                   }
+               }
+               if(ans==true)
+               {
+                   System.out.print(min);
+                   return;
+               }
+             }
+        
+          System.out.println("Invalid input");
+    }
+}
